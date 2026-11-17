@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVA Therapy — Massage by Vladimir in Zurich</title>
+<meta name="description" content="Personalized therapeutic, sports and recovery massage by Vladimir in Zurich, Switzerland. Book your session at EVA Therapy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14182b;--white:#fff;--glass:rgba(255,255,255,.14);--line:rgba(255,255,255,.35);--brown:#8a5a3b;--star:#ff8a1f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#0e0a07;color:var(--white);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url(assets/hero.jpg) center right/cover no-repeat;transform:scale(1.06);animation:zoom 14s ease-out forwards}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,9,5,.85) 0%,rgba(14,9,5,.55) 40%,rgba(14,9,5,.05) 75%),linear-gradient(0deg,rgba(14,9,5,.5),transparent 35%)}
+@keyframes zoom{to{transform:scale(1)}}
+.wrap{position:relative;z-index:2;width:min(1240px,92%);margin:0 auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:28px 0}
+.logo{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:600;letter-spacing:-.02em}
+.logo__mark{width:44px;height:44px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
+.nav{display:flex;align-items:center;gap:6px;padding:6px 6px 6px 22px;border-radius:999px;background:var(--glass);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav a.link{font-size:14px;padding:8px 14px;opacity:.9;border-radius:999px;transition:.25s}
+.nav a.link:hover{background:rgba(255,255,255,.15);opacity:1}
+.btn{display:inline-flex;align-items:center;gap:12px;border-radius:999px;font-weight:500;font-size:15px;transition:transform .25s,background .25s,box-shadow .25s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn--white{background:var(--white);color:var(--navy);padding:14px 28px}
+.btn--white:hover{box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.btn--arrow{padding:6px 6px 6px 20px}
+.btn--ghost{border:1px solid var(--line);padding:6px 6px 6px 24px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px)}
+.btn--ghost:hover{background:rgba(255,255,255,.14)}
+.circle{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .3s}
+.circle--navy{background:var(--navy);color:#fff}
+.circle--white{background:#fff;color:var(--navy)}
+.btn:hover .circle{transform:rotate(45deg)}
+main.wrap{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 0 60px}
+h1{font-size:clamp(40px,5.4vw,72px);line-height:1.05;font-weight:600;letter-spacing:-.03em;max-width:640px;animation:up .9s .1s both}
+.sub{margin-top:22px;max-width:460px;font-size:17px;line-height:1.6;opacity:.85;animation:up .9s .25s both}
+.ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;animation:up .9s .4s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:70px;animation:up .9s .55s both}
+.proof__top{display:flex;align-items:baseline;gap:10px}
+.proof__num{font-size:28px;font-weight:600}
+.proof__lbl{font-size:14px;opacity:.8}
+.proof__row{display:flex;align-items:center;gap:14px;margin-top:10px}
+.stars{color:var(--star);letter-spacing:2px;font-size:20px}
+.avatars{display:flex}
+.avatars span{width:38px;height:38px;border-radius:50%;border:2px solid #fff;margin-left:-10px;display:grid;place-items:center;font-size:13px;font-weight:600;color:#fff}
+.avatars span:first-child{margin-left:0}
+.card-wrap{display:flex;align-items:flex-end;gap:10px}
+.card{display:flex;gap:16px;padding:12px;width:380px;border-radius:22px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.card img{width:110px;height:110px;object-fit:cover;border-radius:14px}
+.card h3{font-size:16px;font-weight:600}
+.card p{font-size:14px;opacity:.85;margin-top:4px;display:flex;align-items:center;gap:6px}
+.card__ctrl{display:flex;gap:8px;margin-top:18px}
+.card__ctrl button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;transition:.2s}
+.card__ctrl button:hover{background:rgba(255,255,255,.2)}
+.card-go{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;transition:transform .3s}
+.card-go:hover{transform:rotate(45deg) scale(1.05)}
+.logos{position:relative;z-index:2;background:#fff;border-radius:40px 40px 0 0;padding:30px 0;overflow:hidden}
+.logos__track{display:flex;gap:80px;width:max-content;animation:marquee 30s linear infinite}
+.logos__track span{font-size:26px;font-weight:700;color:var(--brown);white-space:nowrap;display:flex;align-items:center;gap:10px;opacity:.9;letter-spacing:-.01em}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:900px){.nav a.link{display:none}.nav{padding:6px}.bottom{flex-direction:column;align-items:flex-start}.card{width:100%}.card-wrap{width:100%}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero__bg" role="img" aria-label="Vladimir performing a therapeutic shoulder massage"></div>
+  <header class="wrap">
+    <a href="#" class="logo" id="logo">
+      <span class="logo__mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 21c-1-4-1-8 0-12 1 4 1 8 0 12Z"/><path d="M11 20C6 18 4 13 5 8c4 2 6 7 6 12Z" opacity=".85"/><path d="M13 20c5-2 7-7 6-12-4 2-6 7-6 12Z" opacity=".85"/></svg></span>
+      EVA Therapy
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#about" id="nav-about">About</a>
+      <a class="link" href="#services" id="nav-services">Services</a>
+      <a class="link" href="#location" id="nav-location">Location</a>
+      <a class="link" href="#faq" id="nav-faq">FAQ</a>
+      <a class="btn btn--white btn--arrow" href="#book" id="nav-book">Book a Session <span class="circle circle--navy">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>Feel Better. Move Freely. Live Pain-Free.</h1>
+    <p class="sub">Personalized therapeutic, sports, and recovery massage by Vladimir in Zurich.</p>
+    <div class="ctas">
+      <a class="btn btn--white" href="#book" id="hero-book">Book a Session</a>
+      <a class="btn btn--ghost" href="#services" id="hero-services">Explore Services <span class="circle circle--white">↗</span></a>
+    </div>
+
+    <div class="bottom">
+      <div class="proof">
+        <div class="proof__top"><span class="proof__num">1,200+</span><span class="proof__lbl">Happy Clients</span></div>
+        <div class="proof__row">
+          <span class="stars">★★★★★</span><span>4.9</span>
+          <div class="avatars">
+            <span style="background:#b0714a">AM</span><span style="background:#6d7f6a">LK</span><span style="background:#8c6b9a">SR</span><span style="background:#4f6d8c">JB</span><span style="background:#c49a5a">NF</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card">
+          <img src="assets/room.jpg" alt="EVA Therapy treatment room in Zurich">
+          <div>
+            <h3>Vladimir • Licensed Therapist</h3>
+            <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>Zurich, Switzerland</p>
+            <div class="card__ctrl"><button aria-label="Previous" id="card-prev">‹</button><button aria-label="Next" id="card-next">›</button></div>
+          </div>
+        </div>
+        <a href="#about" class="card-go" id="card-go" aria-label="About Vladimir">↗</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="logos" aria-label="Associations">
+    <div class="logos__track">
+      <span>✚ SVBM</span><span>◈ EMR</span><span>ASCA</span><span>⛉ Swiss Wellness</span><span>◎ Zurich Sport</span><span>❋ Swiss Massage Assoc.</span>
+      <span>✚ SVBM</span><span>◈ EMR</span><span>ASCA</span><span>⛉ Swiss Wellness</span><span>◎ Zurich Sport</span><span>❋ Swiss Massage Assoc.</span>
+    </div>
+  </div>
+</section>
+</body>
+</html>
