@@ -62,15 +62,58 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1.05;font-weight:600;letter-spac
 .logos__track{display:flex;gap:80px;width:max-content;animation:marquee 30s linear infinite}
 .logos__track span{font-size:26px;font-weight:700;color:var(--brown);white-space:nowrap;display:flex;align-items:center;gap:10px;opacity:.9;letter-spacing:-.01em}
 @keyframes marquee{to{transform:translateX(-50%)}}
+.header-right{display:flex;align-items:center;gap:12px}
+.nav{padding:6px 10px}
 .lang{position:relative}
-.lang__btn{display:flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font:500 13px Inter,sans-serif;cursor:pointer;transition:.25s}
+.lang__btn{display:flex;align-items:center;gap:6px;height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;font:500 13px Inter,sans-serif;cursor:pointer;transition:.25s}
 .lang__btn:hover{background:rgba(255,255,255,.15)}
 .lang__menu{position:absolute;right:0;top:calc(100% + 10px);min-width:150px;padding:6px;border-radius:16px;background:rgba(20,16,12,.85);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s;z-index:10}
 .lang.open .lang__menu{opacity:1;visibility:visible;transform:none}
 .lang__menu button{display:flex;justify-content:space-between;width:100%;padding:9px 12px;border:0;border-radius:10px;background:transparent;color:#fff;font:14px Inter,sans-serif;cursor:pointer;text-align:left}
 .lang__menu button:hover,.lang__menu button.active{background:rgba(255,255,255,.14)}
 .lang__menu small{opacity:.55}
-@media(max-width:900px){.nav a.link{display:none}.nav{padding:6px}.bottom{flex-direction:column;align-items:flex-start}.card{width:100%}.card-wrap{width:100%}}
+.burger{display:none}
+.mnav{display:none}
+@media(max-width:900px){.nav{display:none}.bottom{flex-direction:column;align-items:flex-start}.card{width:100%}.card-wrap{width:100%}}
+@media(max-width:700px){
+ .hero__bg{background-position:68% center}
+ header.wrap{width:calc(100% - 24px);margin:12px auto 0;padding:8px 8px 8px 10px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:sticky;top:12px;z-index:20}
+ .logo{font-size:17px;gap:10px;font-weight:500}
+ .logo__mark{width:34px;height:34px}.logo__mark svg{width:16px;height:16px}
+ .header-right{gap:8px}
+ .burger{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+ .lang__btn{height:40px;padding:0 12px;background:rgba(255,255,255,.08);backdrop-filter:none}
+ .lang__btn svg{display:none}
+ .mnav{display:flex;flex-direction:column;gap:4px;position:absolute;left:0;right:0;top:calc(100% + 10px);padding:10px;border-radius:24px;background:rgba(20,16,12,.88);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s}
+ header.menu-open .mnav{opacity:1;visibility:visible;transform:none}
+ .mnav a{padding:14px 16px;border-radius:14px;font-size:17px}
+ .mnav a:hover{background:rgba(255,255,255,.1)}
+ .mnav .btn--white{justify-content:center;margin-top:6px}
+ main.wrap{width:calc(100% - 40px);padding:60px 0 24px;justify-content:flex-start}
+ h1{font-size:clamp(38px,11vw,48px);line-height:1.08;margin-top:40px}
+ .sub{font-size:15px;margin-top:16px}
+ .ctas{gap:10px;margin-top:26px;flex-wrap:nowrap}
+ .btn{font-size:14px}
+ .btn--white{padding:14px 22px}
+ .btn--ghost{padding:5px 5px 5px 18px;gap:10px}
+ .circle{width:34px;height:34px}
+ .bottom{margin-top:auto;padding-top:60px;gap:22px}
+ .proof__num{font-size:24px}
+ .stars{font-size:17px}
+ .avatars span{width:32px;height:32px;font-size:11px}
+ .card{position:relative;padding:10px;gap:14px;border-radius:20px;align-items:center}
+ .card img{width:82px;height:82px;border-radius:12px}
+ .card h3{font-size:14px;padding-right:44px}
+ .card p{font-size:13px}
+ .card__ctrl{display:none}
+ .card-go{position:absolute;right:28px;bottom:calc(24px + 41px - 22px);width:44px;height:44px;font-size:15px}
+ .card-wrap{position:relative}
+ .card-go{bottom:auto;top:50%;right:12px;transform:translateY(-50%)}
+ .card-go:hover{transform:translateY(-50%) rotate(45deg)}
+ .logos{border-radius:28px 28px 0 0;padding:20px 0}
+ .logos__track{gap:48px}
+ .logos__track span{font-size:19px}
+}
 </style>
 </head>
 <body>
@@ -81,11 +124,14 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1.05;font-weight:600;letter-spac
       <span class="logo__mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 21c-1-4-1-8 0-12 1 4 1 8 0 12Z"/><path d="M11 20C6 18 4 13 5 8c4 2 6 7 6 12Z" opacity=".85"/><path d="M13 20c5-2 7-7 6-12-4 2-6 7-6 12Z" opacity=".85"/></svg></span>
       EVA Therapy
     </a>
+    <div class="header-right">
     <nav class="nav" aria-label="Main">
       <a class="link" href="#about" id="nav-about" data-i18n="navAbout">Про мене</a>
       <a class="link" href="#services" id="nav-services" data-i18n="navServices">Послуги</a>
       <a class="link" href="#location" id="nav-location" data-i18n="navLocation">Локація</a>
       <a class="link" href="#faq" id="nav-faq" data-i18n="navFaq">FAQ</a>
+    </nav>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <div class="lang" id="lang">
         <button class="lang__btn" id="lang-toggle" aria-haspopup="true" aria-label="Language"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span id="lang-current">UA</span></button>
         <div class="lang__menu" role="menu">
@@ -95,7 +141,13 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1.05;font-weight:600;letter-spac
           <button data-lang="ru" id="lang-ru">Русский <small>RU</small></button>
         </div>
       </div>
-      <a class="btn btn--white btn--arrow" href="#book" id="nav-book"><span data-i18n="book">Записатися</span> <span class="circle circle--navy">↗</span></a>
+    </div>
+    <nav class="mnav" id="mnav" aria-label="Mobile">
+      <a href="#about" data-i18n="navAbout">Про мене</a>
+      <a href="#services" data-i18n="navServices">Послуги</a>
+      <a href="#location" data-i18n="navLocation">Локація</a>
+      <a href="#faq" data-i18n="navFaq">FAQ</a>
+      <a class="btn btn--white" href="#book" data-i18n="book">Записатися</a>
     </nav>
   </header>
 
@@ -150,6 +202,10 @@ function setLang(l){const d=I18N[l]||I18N.uk;document.documentElement.lang=l;doc
 document.getElementById('lang-toggle').onclick=e=>{e.stopPropagation();langEl.classList.toggle('open')};
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{setLang(b.dataset.lang);langEl.classList.remove('open')});
 document.addEventListener('click',()=>langEl.classList.remove('open'));
+const hdr=document.querySelector('header'),burger=document.getElementById('burger');
+burger.onclick=e=>{e.stopPropagation();const o=hdr.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o);langEl.classList.remove('open')};
+document.querySelectorAll('#mnav a').forEach(a=>a.onclick=()=>hdr.classList.remove('menu-open'));
+document.addEventListener('click',()=>hdr.classList.remove('menu-open'));
 setLang(new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'uk');
 </script>
 </body>
